@@ -30,7 +30,12 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
   useNewUrlParser: true,
   useCreateIndex: true,
   useFindAndModify: false,
-});
+})
+  // eslint-disable-next-line no-console
+  .then(() => { console.log('БД подключена!'); })
+  // eslint-disable-next-line no-console
+  .catch(() => { console.log('БД не подключена!'); });
+
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
